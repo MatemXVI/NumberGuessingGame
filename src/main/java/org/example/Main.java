@@ -6,9 +6,9 @@ import java.io.InputStreamReader;
 import java.util.Random;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void game(BufferedReader br){
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Random random = new Random();
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int minScope = 1, maxScope = 101;
         int randomNumber = random.nextInt(minScope, maxScope);
         int userNumber;
@@ -48,4 +48,49 @@ public class Main {
             }
         }
     }
+
+    public static void save() {
+
+    }
+
+    public static void stats() {
+
+    }
+
+    public static void main(String[] args) {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        boolean isRun = true;
+        while(isRun){
+            System.out.println("Wybierz opcję: ");
+            System.out.println("1. Uruchom grę");
+            System.out.println("2. Zapisz grę");
+            System.out.println("3. Zobacz statystyki");
+            System.out.println("0. Wyjdź z gry");
+            int choice;
+            try {
+                choice = Integer.parseInt(br.readLine());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            switch(choice){
+                case 1:
+                    game(br);
+                    break;
+                case 2:
+                    save();
+                    break;
+                case 3:
+                    stats();
+                    break;
+                case 0:
+                    System.out.println("Trwa opuszczanie gry...");
+                    isRun = false;
+                    break;
+                default:
+                    System.out.println("Wybrano złą opcję");
+            }
+        }
+
+    }
+
 }
