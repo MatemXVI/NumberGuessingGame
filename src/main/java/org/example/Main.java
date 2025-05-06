@@ -14,6 +14,8 @@ public class Main {
         int userNumber;
         int attempts = 0, wins = 0;
         boolean isDrawn = false;
+        System.out.println("LOSOWANIE LICZB");
+        System.out.println("Wersja 1.0, Autor: Mateusz Milczarek");
         while(!isDrawn){
             System.out.println("Podaj liczbę do wylosowania z zakresu 1-100.");
             try {
